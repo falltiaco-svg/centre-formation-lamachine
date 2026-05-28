@@ -6,15 +6,58 @@
   <title>Inscription Étudiant</title>
 
   <style>
-    <script>
+    <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js"></script>
+
+<script>
+
+const SUPABASE_URL = "TON_URL_SUPABASE";
+const SUPABASE_KEY = "TA_CLE_PUBLIQUE";
+
+const client = supabase.createClient(
+  SUPABASE_URL,
+  SUPABASE_KEY
+);
 
 const form = document.querySelector("form");
 
-form.addEventListener("submit", function(event){
+form.addEventListener("submit", async function(event){
 
   event.preventDefault();
 
-  alert("Inscription envoyée avec succès !");
+  const nom =
+    document.querySelector('input[type="text"]').value;
+
+  const telephone =
+    document.querySelector('input[type="tel"]').value;
+
+  const email =
+    document.querySelector('input[type="email"]').value;
+
+  const montant =
+    document.querySelector('input[type="number"]').value;
+
+  const { error } = await client
+    .from("participants")
+    .insert([
+      {
+        nom: nom,
+        telephone: telephone,
+        email: email,
+        montant: montant
+      }
+    ]);
+
+  if(error){
+
+    alert("Erreur lors de l'inscription");
+
+  }else{
+
+    alert("Inscription enregistrée avec succès !");
+
+    form.reset();
+
+  }
 
 });
 
