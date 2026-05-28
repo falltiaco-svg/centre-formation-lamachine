@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Dashboard Admin</title>
+
+  <style>
+
+    body{
+      margin:0;
+      font-family:Arial, sans-serif;
+      background:#f4f6f9;
+    }
+
+    header{
+      background:#0a1f44;
+      color:white;
+      padding:20px;
+      text-align:center;
+    }
+
+    .container{
+      padding:20px;
+    }
+
+    .card{
+      background:white;
+      padding:20px;
+      border-radius:10px;
+      margin-bottom:20px;
+      box-shadow:0 0 10px rgba(0,0,0,0.1);
+    }
+
+    h2{
+      color:#0a1f44;
+    }
+
+    table{
+      width:100%;
+      border-collapse:collapse;
+      margin-top:15px;
+    }
+
+    table th, table td{
+      border:1px solid #ddd;
+      padding:12px;
+      text-align:left;
+    }
+
+    table th{
+      background:#0a1f44;
+      color:white;
+    }
+
+    .btn{
+      padding:8px 12px;
+      border:none;
+      border-radius:5px;
+      cursor:pointer;
+      color:white;
+    }
+
+    .valider{
+      background:green;
+    }
+
+    .refuser{
+      background:red;
+    }
+
+  </style>
+</head>
+
+<body>
+
+<header>
+  <h1>Dashboard Administrateur</h1>
+</header>
+
+<div class="container">
+
+  <div class="card">
+    <h2>Résumé</h2>
+
+    <p>Total étudiants : 25</p>
+    <p>Paiements validés : 18</p>
+    <p>En attente : 7</p>
+  </div>
+
+  <div class="card">
+
+    <h2>Liste des inscriptions</h2>
+
+    <table>
+
+      <tr>
+        <th>Nom</th>
+        <th>Téléphone</th>
+        <th>Formation</th>
+        <th>Paiement</th>
+        <th>Action</th>
+      </tr>
+
+      <tr>
+        <td>Jean Dupont</td>
+        <td>0199000000</td>
+        <td>Pack complet</td>
+        <td>20 000 FCFA</td>
+        <td>
+          <button class="btn valider">
+            Valider
+          </button>
+
+          <button class="btn refuser
